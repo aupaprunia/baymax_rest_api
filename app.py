@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask,request
 from flask_restful import Resource, Api
 from flask_jwt import JWT,jwt_required
@@ -8,7 +10,7 @@ from resources.patient import Patient,all_Patients
 from resources.hospital import Hospital, all_Hospitals
 
 app=Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///data.db'
+app.config['SQLALCHEMY_DATABASE_URI']=os.envoirn.get('DATABASE_URL','sqlite:///data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 api=Api(app)
 app.secret_key="aditya"
