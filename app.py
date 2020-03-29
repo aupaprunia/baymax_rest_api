@@ -10,7 +10,7 @@ from resources.patient import Patient,all_Patients
 from resources.hospital import Hospital, all_Hospitals
 
 app=Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']=os.envoirn.get('DATABASE_URL','sqlite:///data.db')
+app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get('DATABASE_URL','sqlite:///data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 api=Api(app)
 app.secret_key="aditya"
